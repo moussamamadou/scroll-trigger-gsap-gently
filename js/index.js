@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Process each work item
     workItems.forEach((element, index) => {
-      const lines = element.querySelectorAll('.line');
+      const lines = element.querySelectorAll('[data-line]');
       const itemBackground = element.querySelector('[data-work="item-background"]');
       const itemContainer = element.querySelector('[data-work="item-container"]');
       const itemOverlay = element.querySelectorAll('[data-work="item-overlay"]');
@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scale: 1,
         scrollTrigger: getBaseScrollTrigger(ghostItems[index]),
       });
+      
       // Text animations
       [0, 1].forEach(i => {
         gsap.set(lines[i], {
